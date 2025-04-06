@@ -8,7 +8,7 @@ import java.util.stream.LongStream;
 
 public class MontyHall {
 
-  private static final long NUM_GAMES = 10000000;
+  private static final long NUM_GAMES = 100;
   private static final long NUM_THREADS = Runtime.getRuntime().availableProcessors();
   private static final AtomicLong GAME_COUNTER = new AtomicLong(0);
   private static final AtomicLong WINS_NO_SWAP = new AtomicLong(0);
@@ -84,7 +84,7 @@ public class MontyHall {
 
         currentGameId = getNewGameId();
       }
-      latch.countDown(); // Signal that this thread has completed
+      latch.countDown();
     }
   }
 }
