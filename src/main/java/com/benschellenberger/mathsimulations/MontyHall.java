@@ -8,7 +8,7 @@ import java.util.stream.LongStream;
 
 public class MontyHall {
 
-  private static final long NUM_GAMES = 100;
+  private static final long NUM_GAMES = 10000000;
   private static final long NUM_THREADS = Runtime.getRuntime().availableProcessors();
   private static final AtomicLong GAME_COUNTER = new AtomicLong(0);
   private static final AtomicLong WINS_NO_SWAP = new AtomicLong(0);
@@ -25,8 +25,8 @@ public class MontyHall {
     latch.await();
 
     System.out.println("Monty Hall");
-    System.out.println("Wins With Swap: " + WINS_SWAP.get());
-    System.out.println("Wins Without Swap: " + WINS_NO_SWAP.get());
+    System.out.println("Wins With Swap/Loss Without Swap: " + WINS_SWAP.get());
+    System.out.println("Wins Without Swap/Loss With Swap: " + WINS_NO_SWAP.get());
   }
 
   private static class MontyHallThread extends Thread {
